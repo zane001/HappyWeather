@@ -18,6 +18,7 @@ import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
+import com.umeng.analytics.MobclickAgent;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
@@ -97,8 +98,9 @@ public class SplashActivity extends Activity {
                                 }
                               }
                         }
-                    } catch (Exception e) {
+                    } catch (Exception e) {    //如果没有及时定位城市信息，默认使用北京天气
                         e.printStackTrace();
+                        App.addMyArea(new AreaModel(Const.DEF_CITY_ID, Const.DEF_CITY_NAME, Const.DEF_WEATHER_CODE));
                     }
                 }
 
@@ -137,5 +139,17 @@ public class SplashActivity extends Activity {
             mLocationClient.stop();
             mLocationClient = null;
         }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        MobclickAgent.onResume(this);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(this);
     }
 }

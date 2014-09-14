@@ -173,7 +173,7 @@ public class HomeFragment extends BaseFragment implements SwipeRefreshLayout.OnR
             mWeatherToday.bind(mWeatherTodayModels.get(i));
             weatherViews.add(mWeatherToday);
         }
-        mViewPager.setTransitionEffect(JazzyViewPager.TransitionEffect.CubeOut);
+        mViewPager.setTransitionEffect(JazzyViewPager.TransitionEffect.RotateUp);
         mViewPager.setOnPageChangeListener(new MyPageViewListener());
         mViewPager.setOffscreenPageLimit(1);
         mViewPager.setAdapter(new TodayWeatherAdapter(weatherViews, mViewPager));

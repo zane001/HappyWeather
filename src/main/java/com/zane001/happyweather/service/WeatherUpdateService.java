@@ -53,8 +53,7 @@ public class WeatherUpdateService extends Service {
     protected final static String TAG = "WeatherUpdateService";
 
     protected final static int UPDATE_DELAY = 1;
-    protected final static int UPDATE_PERIOD = 3600 * 1000;
-//    protected final static int UPDATE_PERIOD = 10 * 1000;
+    protected final static int UPDATE_PERIOD = 3600 * 1000; //每1小时更新一次
 
     private TodayWeatherModel mTodayWeatherModel;
     private CurWeatherModel mCurWeatherModel;

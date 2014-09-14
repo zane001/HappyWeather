@@ -70,7 +70,7 @@ public class SettingActivity extends SwipeBackActivity implements MySlipSwitch.O
         // 自动添加的发送的具体信息
         intent.putExtra(Intent.EXTRA_TEXT, mStrShareWeather);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(Intent.createChooser(intent, getTitle()));
+        startActivity(Intent.createChooser(intent, getTitle()));    //自动识别系统可以分享的app
     }
 
     /**
